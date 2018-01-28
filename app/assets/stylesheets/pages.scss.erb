@@ -1,0 +1,253 @@
+// Font ////////////////////////////////////////////////////////////////////////
+
+@font-face {
+ font-family:Roboto;
+ font-style:italic;
+ font-weight:300;
+ src:local('Roboto Light Italic'),local('Roboto-LightItalic'),url(http://fonts.gstatic.com/s/roboto/v18/7m8l7TlFO-S3VkhHuR0at50EAVxt0G0biEntp43Qt6E.ttf) format('truetype')
+}
+@font-face {
+ font-family:Roboto;
+ font-style:italic;
+ font-weight:500;
+ src:local('Roboto Medium Italic'),local('Roboto-MediumItalic'),url(http://fonts.gstatic.com/s/roboto/v18/OLffGBTaF0XFOW1gnuHF0Z0EAVxt0G0biEntp43Qt6E.ttf) format('truetype')
+}
+@font-face {
+ font-family:Roboto;
+ font-style:normal;
+ font-weight:300;
+ src:local('Roboto Light'),local('Roboto-Light'),url(http://fonts.gstatic.com/s/roboto/v18/Hgo13k-tfSpn0qi1SFdUfaCWcynf_cDxXwCLxiixG1c.ttf) format('truetype')
+}
+@font-face {
+ font-family:Roboto;
+ font-style:normal;
+ font-weight:400;
+ src:local('Roboto'),local('Roboto-Regular'),url(http://fonts.gstatic.com/s/roboto/v18/zN7GBFwfMP4uA6AR0HCoLQ.ttf) format('truetype')
+}
+@font-face {
+ font-family:Roboto;
+ font-style:normal;
+ font-weight:500;
+ src:local('Roboto Medium'),local('Roboto-Medium'),url(http://fonts.gstatic.com/s/roboto/v18/RxZJdnzeo3R5zSexge8UUaCWcynf_cDxXwCLxiixG1c.ttf) format('truetype')
+}
+
+// Grid ////////////////////////////////////////////////////////////////////////
+
+.container {
+  display: grid;
+
+  grid-template-areas:
+    "nav content"
+    "footer footer";
+
+  grid-template-columns: 25% 1fr;
+  grid-template-rows: 1fr auto;
+
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: content;
+}
+
+footer {
+  grid-area: footer;
+}
+
+// Responsive //////////////////////////////////////////////////////////////////
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "content"
+      "footer";
+
+    grid-template-columns: 1fr;
+    grid-template-rows:
+      auto // Header
+      minmax(75px, auto) // Nav
+      1fr // Content
+      minmax(75px, auto) // Sidebar
+      auto; // Footer
+  }
+
+  nav {
+    margin: 0;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+body {
+  font: 16px/1.6 Roboto, Helvetica, sans-serif;
+  font-weight: 300;
+  // TODO: Fix image if you can be bothered
+  // background-image: url(<%= asset_path "main-background.jpg" %>);
+}
+
+h1 {
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #555;
+}
+
+// Left Navigation ////////////////////////////////////////
+
+nav {
+  background-color: rgba(145,13,13,.8);
+  color: white;
+  padding: 45px 40px;
+}
+
+nav a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+nav figure {
+  text-align: center;
+}
+
+nav figure img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+  width: 150px;
+}
+
+figcaption .title {
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+figcaption .subtitle {
+  text-transform: uppercase;
+}
+
+.links {
+  margin: 45px 0;
+}
+
+.links a {
+  color: rgba(255,255,255,.6);
+}
+
+.links a:hover {
+  color: white;
+}
+
+// Main ///////////////////////////////////////////////////
+
+main {
+  padding: 45px;
+}
+
+main.about {
+  max-width: 750px;
+}
+
+main p {
+  margin: 16px 0;
+}
+
+// Portfolio //////////////////////////////////////////////
+
+#timeline {
+  display: grid;
+
+  grid-template-areas: "time content";
+
+  grid-template-columns: auto 1fr;
+  // grid-row-gap: 30px;
+}
+
+.timeline-date {
+  position: relative;
+  border-right: 1px solid #ddd;
+}
+
+.timeline-date::after {
+  position: absolute;
+  content: " ";
+  width: 5px;
+  height: 5px;
+  right: -3px;
+  background-color: rgba(187,30,30,.8);
+}
+
+.timeline-date:first-child::after {
+  top: 10px;
+}
+
+.timeline-date:not(:first-child)::after {
+  top: 52px;
+}
+
+time {
+  font-style: italic;
+  text-align: right;
+  color: #999;
+
+  padding-right: 20px;
+}
+
+.timeline-content {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  margin-left: 30px;
+  margin-bottom: 22px;
+}
+
+.timeline-content:nth-child(2) p {
+  margin-top: 0;
+}
+
+.timeline-content:not(:nth-child(2)) {
+  border-top: 1px solid #ddd;
+}
+
+.timeline-date:not(:first-child), .timeline-content:not(:nth-child(2)) {
+  padding-top: 30px;
+}
+
+.timeline-date:not(:first-child) {
+  line-height: 3;
+}
+
+.timeline-content h2, .timeline-content a {
+  font-size: 30px;
+  color: #333;
+  text-decoration: none;
+}
+
+.timeline-content a:hover {
+  color: #BB1E1E;
+}
+
+.current {
+  grid-column: span 2;
+}
+
+.project-image {
+  margin: auto;
+}
+
+.project-image img {
+  max-width: 100%;
+  max-height: 568px;
+}

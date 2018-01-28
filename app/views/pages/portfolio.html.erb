@@ -1,1 +1,54 @@
-<h1>Portfolio coming soon</h1>
+<h1>Portfolio</h1>
+
+<div id="timeline">
+
+  <div class="timeline-date">
+    <time>Currently</time>
+  </div>
+  <div class="timeline-content">
+    <div class="project-description current">
+      <p>... studying full-time at General Assembly until the end of January.</p>
+      <p>From there, I'll be looking for an opportunity to work with an organisation that's working to improve social equality and reduce our environmental footprint.</p>
+    </div>
+  </div>
+
+  <div class="timeline-date">
+    <time>Dec 2017</time>
+  </div>
+  <div class="timeline-content">
+    <div class="project-description">
+      <h2><%= link_to 'Gehms', 'http://gehms.herokuapp.com' %></h2>
+      <p>Retro-Games Arcade with hardware controllers.</p>
+    </div>
+    <div class="project-image">
+      <%= link_to image_tag('gehms.png'), 'http://gehms.herokuapp.com', :target => "_blank" %>
+    </div>
+  </div>
+
+  <div class="timeline-date">
+    <time>Nov 2017</time>
+  </div>
+  <div class="timeline-content">
+    <div class="project-description">
+      <h2><%= link_to 'Official Language Map', 'https://project1-languagedb.herokuapp.com/' %></h2>
+      <p>Interactive map that displays the official languages of countries.</p>
+    </div>
+    <div class="project-image">
+      <%= link_to image_tag('languagedb.png'), 'https://project1-languagedb.herokuapp.com/', :target => "_blank" %>
+    </div>
+  </div>
+
+  <div class="timeline-date">
+    <time>Oct 2017</time>
+  </div>
+  <div class="timeline-content">
+    <div class="project-description">
+      <h2><%= link_to 'Tic Tac Toe', 'https://jgan91.github.io/project0/tictactoev2.html' %></h2>
+      <p>Basic Tic Tac Toe game with an unbeatable AI (minimax algorithm) and basic game history.</p>
+    </div>
+    <div class="project-image">
+      <%= link_to image_tag('tictactoe.png'), 'https://jgan91.github.io/project0/tictactoev2.html', :target => "_blank" %>
+    </div>
+  </div>
+
+</div>

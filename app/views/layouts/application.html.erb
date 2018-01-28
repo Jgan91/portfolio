@@ -10,14 +10,33 @@
 
   <body>
 
-    <nav>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'About Me', about_path %>
-      <%= link_to 'Portfolio', portfolio_path %>
-      <%= link_to 'Contact', contact_path %>
-    </nav>
+    <div class="container">
 
-    <%= yield %>
+      <nav>
+        <a href="/">
+          <figure>
+            <%= image_tag 'profile-picture.png' %>
+            <figcaption>
+              <h1 class="title">Justin Gan</h1>
+              <h2 class="subtitle">Full-Stack Web Developer</h2>
+            </figcaption>
+          </figure>
+        </a>
+
+        <div class="links">
+          <%= link_to 'About Me', about_path %>
+          <%= link_to 'Portfolio', portfolio_path %>
+          <%= link_to 'Contact', contact_path %>
+        </div>
+      </nav>
+
+      <main class="<%= controller_name %> <%= action_name %>">
+        <%= yield %>
+      </main>
+
+      <footer></footer>
+
+    </div>
 
   </body>
 </html>
