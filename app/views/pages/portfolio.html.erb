@@ -1,4 +1,4 @@
-<h1>Portfolio</h1>
+<h1>Projects</h1>
 
 <div id="timeline">
 
@@ -6,23 +6,27 @@
     <time>Currently</time>
   </div>
   <div class="timeline-content">
-    <div class="project-description current">
-      <p>... studying full-time at General Assembly until the end of January.</p>
-      <p>From there, I'll be looking for an opportunity to work with an organisation that's working to improve social equality and reduce our environmental footprint.</p>
+    <div class="project-text current">
+      <p>... just finished a 3-month immersive Web Development course at General Assembly.</p>
+      <p>I'm now looking for an opportunity to work with an organisation that's working on solving interesting problems.</p>
     </div>
   </div>
 
   <div class="timeline-date">
-    <time>Jan 2017</time>
+    <time>Jan 2018</time>
   </div>
   <div class="timeline-content">
-    <div class="project-description">
-      <h2>FlappyBox</h2>
+    <div class="project-text">
+      <h2><%= link_to 'FlappyBox', 'https://jgan91.github.io/flappy-bird-tutorial/', target: '_blank' %></h2>
       <p>Flappy Bird clone built in Phaser</p>
-      <p>Gave a tutorial on how to recreate a basic flappy bird game in the browser.</p>
+      <p>I gave a tutorial on how to recreate a basic flappy bird game in the browser.</p>
+      <%= link_to( 'https://github.com/Jgan91/flappy-bird-tutorial', target: '_blank' ) do %>
+      <%= image_tag 'github_32px.png'  %>
+      <span>flappy-bird-tutorial</span>
+      <% end %>
     </div>
     <div class="project-image">
-      <%= image_tag 'flappybox.png' %>
+      <%= link_to image_tag('flappybox.png'), 'https://jgan91.github.io/flappy-bird-tutorial/', target: '_blank' %>
     </div>
   </div>
 
@@ -30,12 +34,12 @@
     <time>Dec 2017</time>
   </div>
   <div class="timeline-content">
-    <div class="project-description">
-      <h2><%= link_to 'Gehms', 'http://gehms.herokuapp.com' %></h2>
+    <div class="project-text">
+      <h2><%= link_to 'Gehms', 'http://gehms.herokuapp.com', target: '_blank' %></h2>
       <p>Retro-Games Arcade with hardware controllers.</p>
     </div>
     <div class="project-image">
-      <%= link_to image_tag('gehms.png'), 'http://gehms.herokuapp.com', :target => "_blank" %>
+      <%= link_to image_tag('gehms.png'), 'http://gehms.herokuapp.com', target: '_blank' %>
     </div>
   </div>
 
@@ -43,12 +47,12 @@
     <time>Nov 2017</time>
   </div>
   <div class="timeline-content">
-    <div class="project-description">
-      <h2><%= link_to 'Official Language Map', 'https://project1-languagedb.herokuapp.com/' %></h2>
+    <div class="project-text">
+      <h2><%= link_to 'Official Language Map', 'https://project1-languagedb.herokuapp.com/', target: '_blank' %></h2>
       <p>Interactive map that displays the official languages of countries.</p>
     </div>
     <div class="project-image">
-      <%= link_to image_tag('languagedb.png'), 'https://project1-languagedb.herokuapp.com/', :target => "_blank" %>
+      <%= link_to image_tag('languagedb.png'), 'https://project1-languagedb.herokuapp.com/', target: '_blank' %>
     </div>
   </div>
 
@@ -56,12 +60,12 @@
     <time>Oct 2017</time>
   </div>
   <div class="timeline-content">
-    <div class="project-description">
-      <h2><%= link_to 'Tic Tac Toe', 'https://jgan91.github.io/project0/tictactoev2.html' %></h2>
+    <div class="project-text">
+      <h2><%= link_to 'Tic Tac Toe', 'https://jgan91.github.io/project0/tictactoev2.html', target: '_blank' %></h2>
       <p>Basic Tic Tac Toe game with an unbeatable AI (minimax algorithm) and basic game history.</p>
     </div>
     <div class="project-image">
-      <%= link_to image_tag('tictactoe.png'), 'https://jgan91.github.io/project0/tictactoev2.html', :target => "_blank" %>
+      <%= link_to image_tag('tictactoe.png'), 'https://jgan91.github.io/project0/tictactoev2.html', target: '_blank' %>
     </div>
   </div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Portfolio</title>
+    <title>Projects</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -18,15 +18,15 @@
             <%= image_tag 'profile-picture.png' %>
             <figcaption>
               <h1 class="title">Justin Gan</h1>
-              <h2 class="subtitle">Full-Stack Web Developer</h2>
+              <h2 class="subtitle">Junior Web Developer</h2>
             </figcaption>
           </figure>
         </a>
 
         <div class="links">
-          <%= link_to 'About Me', about_path %>
-          <%= link_to 'Portfolio', portfolio_path %>
-          <%= link_to 'Contact', contact_path %>
+          <%= link_to 'About Me', about_path, class: ( action_name == 'about' ? 'current' : '' ) %>
+          <%= link_to 'Projects', portfolio_path, class: ( action_name == 'portfolio' ? 'current' : '' ) %>
+          <%= link_to 'Contact', contact_path, class: ( action_name == 'contact' ? 'current' : '' ) %>
         </div>
       </nav>
 

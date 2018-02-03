@@ -1,3 +1,8 @@
+// Universal ///////////////////////////////////////
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
 // Font ////////////////////////////////////////////////////////////////////////
 
 @font-face {
@@ -52,6 +57,10 @@ header {
 
 nav {
   grid-area: nav;
+
+  position: fixed;
+  height: 100vh;
+  width: 25vw;
 }
 
 main {
@@ -109,6 +118,8 @@ nav {
   background-color: rgba(145,13,13,.8);
   color: white;
   padding: 45px 40px;
+
+  text-transform: uppercase;
 }
 
 nav a {
@@ -130,24 +141,47 @@ nav figure img {
 figcaption .title {
   font-size: 22px;
   font-weight: 500;
-  text-transform: uppercase;
   color: inherit;
-}
-
-figcaption .subtitle {
-  text-transform: uppercase;
 }
 
 .links {
   margin: 45px 0;
+
+  font-size: 14px;
+  line-height: 30px;
 }
 
 .links a {
   color: rgba(255,255,255,.6);
+  height: 30px; // prevents hover::after from increasing link height
 }
 
 .links a:hover {
   color: white;
+}
+
+.links a.current {
+  color: white;
+}
+
+.links a.current::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-right: 8px solid white;
+  right: 0;
+  transform: translateY( 4px );
+}
+
+.links a.current::after, .links a:hover::after {
+  font-family: FontAwesome;
+  content: " \f105 ";
+
+  padding-left: 3px;
 }
 
 // Main ///////////////////////////////////////////////////
@@ -165,7 +199,7 @@ main p {
   margin: 16px 0;
 }
 
-// Portfolio //////////////////////////////////////////////
+// Projects //////////////////////////////////////////////
 
 #timeline {
   display: grid;
@@ -231,8 +265,11 @@ time {
   line-height: 3;
 }
 
-.timeline-content h2, .timeline-content a {
+.timeline-content h2 {
   font-size: 30px;
+}
+
+.timeline-content h2, .timeline-content a {
   color: #333;
   text-decoration: none;
 }
@@ -243,6 +280,10 @@ time {
 
 .current {
   grid-column: span 2;
+}
+
+.project-text {
+  padding-right: 30px;
 }
 
 .project-image {
