@@ -211,6 +211,15 @@ main p {
   margin: 16px 0;
 }
 
+.general-assembly, .timeline-content a.general-assembly {
+  color: #BB1E1E;
+  text-decoration: none;
+}
+
+.general-assembly:hover, .timeline-content a.general-assembly:hover {
+  text-decoration: underline;
+}
+
 // Home ////////////////////////////////////////////////////////////////////////
 
 .container:before {
@@ -262,11 +271,10 @@ main.home p {
 
 #timeline {
   display: grid;
-
   grid-template-areas: "time content";
-
   grid-template-columns: auto 1fr;
-  // grid-row-gap: 30px;
+
+  margin-top: 16px;
 }
 
 .timeline-date {
@@ -355,17 +363,46 @@ time {
 }
 
 // Skills ///////////////////////////////////////////
-.tech-icons div {
-  display: inline-block;
-  margin-right: 20px;
-  text-align: center;
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.tech-icons img {
+
+.technologies > div {
+  display: inline-grid;
+  grid-template-areas:
+    "title"
+    "icons";
+}
+
+.technologies img {
   margin: 5px 10px 10px 0;
   height: 64px;
 }
 
-.tech-icons h2 {
+.technologies h2 {
+  text-align: center;
   font-size: 1.3em;
   text-decoration: underline;
+}
+
+.technologies .icons {
+  text-align: center;
+}
+
+// Contact /////////////////////////////////////////////
+.contact section {
+  margin-top: 16px;
+  display: grid;
+
+  grid-template-columns: 1fr 85%;
+}
+
+.contact section p {
+  margin: 0;
+}
+
+.contact section i {
+  color: #BB1E1E;
 }
