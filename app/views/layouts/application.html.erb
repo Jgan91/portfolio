@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Projects</title>
+    <title>Justin Gan</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -24,9 +24,26 @@
         </a>
 
         <div class="links">
-          <%= link_to 'About Me', about_path, class: ( action_name == 'about' ? 'current' : '' ) %>
+          <%= link_to 'My Skills & Offer', skills_path, class: ( action_name == 'skills' ? 'current' : '' ) %>
           <%= link_to 'Projects', portfolio_path, class: ( action_name == 'portfolio' ? 'current' : '' ) %>
           <%= link_to 'Contact', contact_path, class: ( action_name == 'contact' ? 'current' : '' ) %>
+
+          <%= link_to 'About Me', about_path, class: ( action_name == 'about' ? 'current' : '' ) %>
+        </div>
+
+        <div class="social">
+          <p>Get in touch</p>
+          <div class="icons">
+            <%= mail_to 'justinsgan@gmail.com' do %>
+              <i class="fa fa-envelope"></i>
+            <% end %>
+            <%= link_to 'https://github.com/Jgan91/', target: '_blank' do %>
+              <i class="fa fa-github-square"></i>
+            <% end %>
+            <%= link_to 'https://www.linkedin.com/in/justinsgan/', target: '_blank' do %>
+              <i class="fa fa-linkedin-square"></i>
+            <% end %>
+          </div>
         </div>
       </nav>
 

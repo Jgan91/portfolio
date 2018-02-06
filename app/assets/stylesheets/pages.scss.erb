@@ -100,8 +100,6 @@ footer {
 body {
   font: 16px/1.6 Roboto, Helvetica, sans-serif;
   font-weight: 300;
-  // TODO: Fix image if you can be bothered
-  // background-image: url(<%= asset_path "main-background.jpg" %>);
   background-color: #f6f6f6;
 }
 
@@ -156,7 +154,7 @@ figcaption .title {
   height: 30px; // prevents hover::after from increasing link height
 }
 
-.links a:hover {
+.links a:hover, .icons i:hover {
   color: white;
 }
 
@@ -184,6 +182,20 @@ figcaption .title {
   padding-left: 3px;
 }
 
+.social p {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.social a {
+  display: inline-block;
+}
+
+.icons {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 // Main ///////////////////////////////////////////////////
 
 main {
@@ -191,13 +203,60 @@ main {
   padding: 45px;
 }
 
-main.about {
+main:not(.portfolio) {
   max-width: 750px;
 }
 
 main p {
   margin: 16px 0;
 }
+
+// Home ////////////////////////////////////////////////////////////////////////
+
+.container:before {
+  content: '';
+  height: 100vh;
+  width: 100vw;
+  background-image: url( <%= asset_path 'home_background.jpg' %> );
+  background-position: 10% 25%;
+  background-repeat: no-repeat;
+  background-size: fill;
+  position: fixed;
+  left: 25%;
+  filter: grayscale( 100% ) contrast( 50% );
+  z-index: -2;
+}
+
+.container:after {
+  content: "";
+  background-image: url( <%= asset_path 'noise.png' %>);
+  width: 100vw;
+  // opacity: 0.9;
+  z-index: -1;
+}
+
+main.home {
+  background-color: transparent;
+  padding-left: 80px;
+  padding-top: 130px;
+  text-shadow: 1px 1px 2px rgba( 0, 0, 0, 0.6 );
+}
+
+main.home h1, main.home p {
+  color: white;
+  text-transform: none;
+}
+
+main.home h1 {
+  font-size: 3em;
+  font-weight: 500;
+}
+
+main.home p {
+  font-size: 2em;
+  font-weight: 300;
+}
+
 
 // Projects //////////////////////////////////////////////
 
@@ -295,7 +354,18 @@ time {
   max-height: 568px;
 }
 
-// About ///////////////////////////////////////////
-.technologies {
-  color: #BB1E1E;
+// Skills ///////////////////////////////////////////
+.tech-icons div {
+  display: inline-block;
+  margin-right: 20px;
+  text-align: center;
+}
+.tech-icons img {
+  margin: 5px 10px 10px 0;
+  height: 64px;
+}
+
+.tech-icons h2 {
+  font-size: 1.3em;
+  text-decoration: underline;
 }
