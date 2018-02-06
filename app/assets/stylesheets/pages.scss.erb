@@ -364,17 +364,30 @@ time {
 
 // Skills ///////////////////////////////////////////
 .technologies {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+
 }
 
-.technologies > div {
-  display: inline-grid;
-  grid-template-areas:
-    "title"
-    "icons";
+.row {
+  display: flex;
+  justify-content: space-around;
 }
+
+.row > div {
+  display: inline-block;
+}
+
+// .technologies {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+// }
+//
+// .technologies > div {
+//   display: inline-grid;
+//   grid-template-areas:
+//     "title"
+//     "icons";
+// }
 
 .technologies img {
   margin: 5px 10px 10px 0;
