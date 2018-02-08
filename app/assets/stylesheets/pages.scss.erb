@@ -71,30 +71,6 @@ footer {
   grid-area: footer;
 }
 
-// Responsive //////////////////////////////////////////////////////////////////
-
-@media (max-width: 768px) {
-  .container {
-    grid-template-areas:
-      "header"
-      "nav"
-      "content"
-      "footer";
-
-    grid-template-columns: 1fr;
-    grid-template-rows:
-      auto // Header
-      minmax(75px, auto) // Nav
-      1fr // Content
-      minmax(75px, auto) // Sidebar
-      auto; // Footer
-  }
-
-  nav {
-    margin: 0;
-  }
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 
 body {
@@ -146,7 +122,7 @@ figcaption .title {
   margin: 45px 0;
 
   font-size: 14px;
-  line-height: 30px;
+  line-height: 50px;
 }
 
 .links a {
@@ -162,24 +138,32 @@ figcaption .title {
   color: white;
 }
 
-.links a.current::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid transparent;
-  border-right: 8px solid white;
-  right: 0;
-  transform: translateY( 4px );
+@media (min-width: 1000px) {
+  .links a.current::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-right: 8px solid white;
+    right: 0;
+    transform: translateY( 4px );
+  }
 }
 
-.links a.current::after, .links a:hover::after {
-  font-family: FontAwesome;
-  content: " \f105 ";
+@media (min-width:1000px) {
+  .links a.current::after, .links a:hover::after {
+    font-family: FontAwesome;
+    content: " \f105 ";
 
-  padding-left: 3px;
+    padding-left: 3px;
+  }
+}
+
+.social {
+  display: inline-block;
 }
 
 .social p {
@@ -191,7 +175,7 @@ figcaption .title {
   display: inline-block;
 }
 
-.icons {
+.icons, .navigation-extend-button {
   font-size: 22px;
   color: rgba(255, 255, 255, 0.6);
 }
@@ -227,7 +211,7 @@ main p {
   height: 100vh;
   width: 100vw;
   background-image: url( <%= asset_path 'home_background.jpg' %> );
-  background-position: 10% 25%;
+  background-position: right 75% top 25%;
   background-repeat: no-repeat;
   background-size: fill;
   position: fixed;
@@ -240,7 +224,9 @@ main p {
   content: "";
   background-image: url( <%= asset_path 'noise.png' %>);
   width: 100vw;
-  // opacity: 0.9;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   z-index: -1;
 }
 
@@ -405,4 +391,99 @@ time {
 
 .contact section i {
   color: #BB1E1E;
+}
+
+
+// Responsive //////////////////////////////////////////////////////////////////
+
+.navigation-extend-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin-top: 20px;
+  border-top: 1px solid rgba( 255, 255, 255, .2 );
+  border-bottom: 1px solid rgba( 255, 255, 255, .2 );
+  position: relative;
+  line-height: 50px;
+}
+
+.navigation-extend-button {
+  display: inline-block;
+  text-align: right;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "content"
+      "footer";
+
+    grid-template-columns: 1fr;
+    // grid-template-rows:
+    //   auto // Header
+    //   minmax(75px, auto) // Nav
+    //   1fr // Content
+    //   minmax(75px, auto) // Sidebar
+    //   auto; // Footer
+  }
+
+  .container::before {
+    left: auto;
+    background-position: 40% 25%;
+  }
+
+  nav {
+    position: relative;
+    height: auto;
+    width: auto;
+
+    padding-bottom: 0;
+
+    text-align: right;
+  }
+
+  .navigation-extend-bar {
+    text-align: left;
+  }
+
+  nav > div.social {
+    display: none;
+  }
+
+  .links {
+    margin: auto;
+  }
+
+  .links a {
+    height: auto;
+  }
+
+  .extension {
+    height: 0;
+    overflow: hidden;
+
+    transition: height .5s;
+  }
+
+  .extended .extension {
+    height: 200px;
+  }
+
+  nav.home {
+    padding-top: 0;
+  }
+
+  nav.home .navigation-extend-bar {
+    margin-top: 0px;
+  }
+
+  nav.home > :not( .navigation-extendable ) {
+    display: none;
+  }
+
+  main.home {
+    padding: 40px 20px;
+  }
 }
