@@ -10,7 +10,7 @@
 
   <body>
 
-    <div class="container">
+    <div class="container<%= ' home' if action_name == 'home' %>">
 
       <nav class="<%= 'home' if action_name == 'home' %>">
         <a href="/">

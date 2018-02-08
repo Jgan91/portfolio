@@ -414,19 +414,17 @@ time {
 
 @media (max-width: 1000px) {
   .container {
-    grid-template-areas:
-      "header"
-      "nav"
-      "content"
-      "footer";
-
-    grid-template-columns: 1fr;
+    display: inherit;
+    // grid-template-areas:
+    //   "nav"
+    //   "content"
+    //   "footer";
+    //
+    // grid-template-columns: 1fr;
     // grid-template-rows:
-    //   auto // Header
-    //   minmax(75px, auto) // Nav
-    //   1fr // Content
-    //   minmax(75px, auto) // Sidebar
-    //   auto; // Footer
+    //   auto // Nav
+    //   auto // Content
+    //   auto // Footer
   }
 
   .container::before {
@@ -439,6 +437,7 @@ time {
     height: auto;
     width: auto;
 
+    padding-top: 10px;
     padding-bottom: 0;
 
     text-align: right;
@@ -475,6 +474,10 @@ time {
     padding-top: 0;
   }
 
+  nav.home.extended {
+    height: 255px;
+  }
+
   nav.home .navigation-extend-bar {
     margin-top: 0px;
   }
@@ -485,5 +488,13 @@ time {
 
   main.home {
     padding: 40px 20px;
+  }
+
+  main.home h1 {
+    font-size: 2em;
+  }
+
+  main.home p {
+    font-size: 1.2em;
   }
 }
