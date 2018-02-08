@@ -118,6 +118,10 @@ figcaption .title {
   color: inherit;
 }
 
+.navigation-extend-bar {
+  display: none;
+}
+
 .links {
   margin: 45px 0;
 
@@ -396,21 +400,6 @@ time {
 
 // Responsive //////////////////////////////////////////////////////////////////
 
-.navigation-extend-bar {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  margin-top: 20px;
-  border-top: 1px solid rgba( 255, 255, 255, .2 );
-  border-bottom: 1px solid rgba( 255, 255, 255, .2 );
-  position: relative;
-  line-height: 50px;
-}
-
-.navigation-extend-button {
-  display: inline-block;
-  text-align: right;
-}
 
 @media (max-width: 1000px) {
   .container {
@@ -444,7 +433,23 @@ time {
   }
 
   .navigation-extend-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 20px;
+    border-top: 1px solid rgba( 255, 255, 255, .2 );
+    border-bottom: 1px solid rgba( 255, 255, 255, .2 );
+    position: relative;
+    line-height: 50px;
+  }
+
+  .navigation-extend-bar {
     text-align: left;
+  }
+
+  .navigation-extend-button {
+    display: inline-block;
+    text-align: right;
   }
 
   nav > div.social {
@@ -495,6 +500,6 @@ time {
   }
 
   main.home p {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 }
