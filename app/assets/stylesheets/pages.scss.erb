@@ -382,20 +382,24 @@ time {
 
 // Skills ///////////////////////////////////////////
 .technologies {
-
+  display: grid;
+  grid-template-columns: repeat( 6, 1fr );
 }
 
-.row {
-  display: flex;
-  justify-content: space-around;
+.front-end-languages, .server-side-languages {
+  grid-column: span 3;
 }
 
-.row > div {
-  display: inline-block;
+.frameworks {
+  grid-column: span 6;
+}
+
+.libraries, .version-control, .cloud-platform {
+  grid-column: span 2;
 }
 
 .technologies img {
-  margin: 5px 10px 10px 0;
+  margin: 5px 10px 10px;
   height: 64px;
 }
 
@@ -407,6 +411,27 @@ time {
 
 .technologies .icons {
   text-align: center;
+}
+
+@media (max-width: 745px) {
+  .technologies img {
+    margin: 5px 25px 0;
+  }
+}
+
+@media (max-width: 510px) {
+  .front-end-languages, .server-side-languages, .frameworks, .libraries, .version-control, .cloud-platform {
+    grid-column: span 6;
+  }
+  .technologies img {
+    margin: 5px 20px;
+  }
+}
+
+@media (max-width: 475px) {
+  .technologies img {
+    margin: 5px 10px;
+  }
 }
 
 // Contact /////////////////////////////////////////////
