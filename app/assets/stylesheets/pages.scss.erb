@@ -86,6 +86,10 @@ h1 {
   color: #555;
 }
 
+strong {
+  font-weight: 500;
+}
+
 // Left Navigation ////////////////////////////////////////
 
 nav {
@@ -142,7 +146,7 @@ figcaption .title {
   color: white;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1023px) {
   .links a.current::before {
     content: "";
     display: block;
@@ -157,7 +161,7 @@ figcaption .title {
   }
 }
 
-@media (min-width:1000px) {
+@media (min-width:1023px) {
   .links a.current::after, .links a:hover::after {
     font-family: FontAwesome;
     content: " \f105 ";
@@ -256,6 +260,30 @@ main.home p {
   font-weight: 300;
 }
 
+.home-buttons {
+  display: none;
+}
+
+@media (max-width:1023px) {
+  .home-buttons {
+    display: inline-grid;
+    grid-row-gap: 20px;
+
+    font-size: 1.1em;
+  }
+
+  .home-buttons .button {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.4em 0.8em;
+
+    opacity: 0.8;
+    box-shadow: 1px 1px 2px rgba( 0, 0, 0, .47 );
+  }
+}
 
 // Projects //////////////////////////////////////////////
 
@@ -401,7 +429,7 @@ time {
 // Responsive //////////////////////////////////////////////////////////////////
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1023px) {
   .container {
     display: inherit;
     // grid-template-areas:
