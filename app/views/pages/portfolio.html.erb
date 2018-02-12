@@ -17,13 +17,31 @@
   </div>
   <div class="timeline-content">
     <div class="project-text">
+      <h2><%= link_to 'Blackjack: The Gathering', 'https://blackjack-the-gathering.herokuapp.com', target: '_blank' %></h2>
+      <p>An attempt to recreate a simplified version of the card game, Magic: The Gathering, in the browser.</p>
+      <p>It quickly devolved into a browser-based implementation of blackjack as we wrestled with the complexities of implementing a card game over a network.</p>
+      <div class="repo">
+        <%= link_to image_tag( 'github_32px.png' ), 'https://github.com/Jgan91/project3' %>
+        <%= link_to 'project3', 'https://github.com/Jgan91/project3' %>
+      </div>
+    </div>
+    <div class="project-image">
+      <%= link_to image_tag('blackjack_the_gathering.png'), 'https://blackjack-the-gathering.herokuapp.com', target: '_blank' %>
+    </div>
+  </div>
+
+  <div class="timeline-date">
+    <time>Jan 2018</time>
+  </div>
+  <div class="timeline-content">
+    <div class="project-text">
       <h2><%= link_to 'FlappyBox', 'https://jgan91.github.io/flappy-bird-tutorial/', target: '_blank' %></h2>
       <p>Flappy Bird clone built in Phaser</p>
       <p>I gave a tutorial on how to recreate a basic flappy bird game in the browser.</p>
-      <%= link_to( 'https://github.com/Jgan91/flappy-bird-tutorial', target: '_blank' ) do %>
-      <%= image_tag 'github_32px.png'  %>
-      <span>flappy-bird-tutorial</span>
-      <% end %>
+      <div class="repo">
+        <%= link_to image_tag( 'github_32px.png' ), 'https://github.com/Jgan91/flappy-bird-tutorial' %>
+        <%= link_to 'flappy-bird-tutorial', 'https://github.com/Jgan91/flappy-bird-tutorial' %>
+      </div>
     </div>
     <div class="project-image">
       <%= link_to image_tag('flappybox.png'), 'https://jgan91.github.io/flappy-bird-tutorial/', target: '_blank' %>
@@ -37,6 +55,11 @@
     <div class="project-text">
       <h2><%= link_to 'Gehms', 'http://gehms.herokuapp.com', target: '_blank' %></h2>
       <p>Retro-Games Arcade with hardware controllers.</p>
+      <p>My contribution to this group project was the implementation of a local multiplayer game of the classic, "snake".</p>
+      <div class="repo">
+        <%= link_to image_tag( 'github_32px.png' ), 'https://github.com/madeleinemila/retro-gaming' %>
+        <%= link_to 'retro-gaming', 'https://github.com/madeleinemila/retro-gaming' %>
+      </div>
     </div>
     <div class="project-image">
       <%= link_to image_tag('gehms.png'), 'http://gehms.herokuapp.com', target: '_blank' %>
@@ -50,6 +73,10 @@
     <div class="project-text">
       <h2><%= link_to 'Official Language Map', 'https://project1-languagedb.herokuapp.com/', target: '_blank' %></h2>
       <p>Interactive map that displays the official languages of countries.</p>
+      <div class="repo">
+        <%= link_to image_tag( 'github_32px.png' ), 'https://github.com/Jgan91/project1' %>
+        <%= link_to 'project1', 'https://github.com/Jgan91/project1' %>
+      </div>
     </div>
     <div class="project-image">
       <%= link_to image_tag('languagedb.png'), 'https://project1-languagedb.herokuapp.com/', target: '_blank' %>
@@ -63,6 +90,10 @@
     <div class="project-text">
       <h2><%= link_to 'Tic Tac Toe', 'https://jgan91.github.io/project0/tictactoev2.html', target: '_blank' %></h2>
       <p>Basic Tic Tac Toe game with an unbeatable AI (minimax algorithm) and basic game history.</p>
+      <div class="repo">
+        <%= link_to image_tag( 'github_32px.png' ), 'https://github.com/Jgan91/project0' %>
+        <%= link_to 'project0', 'https://github.com/Jgan91/project0' %>
+      </div>
     </div>
     <div class="project-image">
       <%= link_to image_tag('tictactoe.png'), 'https://jgan91.github.io/project0/tictactoev2.html', target: '_blank' %>
